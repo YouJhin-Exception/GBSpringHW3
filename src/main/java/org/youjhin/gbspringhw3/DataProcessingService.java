@@ -22,8 +22,6 @@ public class DataProcessingService {
        return (List<User>) userRepository.findAll();
    }
 
-
-
     public String getGreeting() {
         return "Hello world!";
     }
@@ -31,13 +29,13 @@ public class DataProcessingService {
     public List<User> sortUserByAge(List<User> users) {
         return users.stream()
                 .sorted(Comparator.comparing(User::getAge))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<User> filterUserByAge(List<User> users, int age) {
         return users.stream()
                 .filter(user -> user.getAge() > age)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public double calculateAverageAge(List<User> users){
