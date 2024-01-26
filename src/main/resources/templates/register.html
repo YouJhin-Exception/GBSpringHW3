@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Page</title>
+    <style>
+        .centered-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+
+        .centered-form input[type="submit"], .centered-form button {
+            font-size: 1.2em;
+            padding: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .button-container input[type="submit"], .button-container button {
+            flex-grow: 1;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body style="background-color: #333;">
+<div class="centered-form">
+    <h1>Registration Form</h1>
+    <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+        <p>
+            <label>Name: </label>
+            <input type="text" th:field="*{name}" />
+        </p>
+        <p>
+            <label>Age: </label>
+            <input type="number" th:field="*{age}" />
+        </p>
+        <p>
+            <label>Email: </label>
+            <input type="text" th:field="*{email}" />
+        </p>
+        <div class="button-container">
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+    <button type="button" onclick="window.location.href='/all'">View All Users</button>
+</div>
+</body>
+</html>
