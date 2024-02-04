@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Success Page</title>
+    <style>
+        .centered-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body style="background-color: #333;">
+<div class="centered-content">
+    <h1>User <span th:text="${user.name}"></span> успешно зарегистрирован</h1>
+</div>
+</body>
+</html>
